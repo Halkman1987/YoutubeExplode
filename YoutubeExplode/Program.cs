@@ -19,12 +19,16 @@ namespace YoutubeExplode
             string outputFilePath = @"D:\you";
             
             PultButton pultButton = new PultButton();
+            
             YoutubeClient youtubeClient = new YoutubeClient();
+            
             Downloadvideo downloadvideo = new Downloadvideo(youtubeClient, videoUrl, outputFilePath);
+            
             pultButton.ChangeCommand(downloadvideo);
             pultButton.InfoVideo();
             Console.WriteLine("Нажмем для скачивания");
             Console.ReadKey();
+            
             pultButton.DownLoadVideo();
             Console.ReadKey();
         }
