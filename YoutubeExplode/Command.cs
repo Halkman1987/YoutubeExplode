@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace YoutubeExplode
 {
-    abstract class Command
+    abstract public class Command
     {
-        public abstract void Run();
-        public abstract void Cancel();
+        public abstract Task RunInfo();
+        public abstract Task RunDownload();
     }
 }

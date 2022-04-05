@@ -7,24 +7,25 @@ using YoutubeExplode.Videos;
 using YoutubeExplode;
 using YoutubeExplode.Converter;
 
-
-
-
 namespace YoutubeExplode
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Вставьте адресс");
+            string videoUrl = Console.ReadLine();
+            // = "https://www.youtube.com/watch?v=AsNtJQK3Q90";
             string outputFilePath = @"D:\you";
-            string videoUrl = "https://www.youtube.com/shorts/IuComoRuoM0";
-
-
+            
+            PultButton pultButton = new PultButton();
             YoutubeClient youtubeClient = new YoutubeClient();
-
             Downloadvideo downloadvideo = new Downloadvideo(youtubeClient, videoUrl, outputFilePath);
-            downloadvideo.Runn();
-            downloadvideo.DownVidAsync();
+            pultButton.ChangeCommand(downloadvideo);
+            pultButton.InfoVideo();
+            Console.WriteLine("Нажмем для скачивания");
+            Console.ReadKey();
+            pultButton.DownLoadVideo();
             Console.ReadKey();
         }
     }
