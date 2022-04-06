@@ -30,7 +30,7 @@ namespace YoutubeExplode
             
             pultButton.ChangeCommand(downloadvideo);
             pultButton.InfoVideo();
-            Console.WriteLine("Нажмем для скачивания");
+            Console.WriteLine("Нажмите для скачивания любую клавишу");
             Console.ReadKey();
             Console.WriteLine("Начинается загрузка видеофайла");
             pultButton.DownLoadVideo();
