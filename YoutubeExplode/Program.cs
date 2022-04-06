@@ -23,9 +23,7 @@ namespace YoutubeExplode
             string outputFilePath = Path.Combine(rootdir, VidName +".mp4");
 
             PultButton pultButton = new PultButton();
-            
             YoutubeClient youtubeClient = new YoutubeClient();
-            
             Downloadvideo downloadvideo = new Downloadvideo(youtubeClient, videoUrl, outputFilePath);
             
             pultButton.ChangeCommand(downloadvideo);

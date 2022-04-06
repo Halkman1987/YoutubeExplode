@@ -33,12 +33,7 @@ namespace YoutubeExplode
         }
         async override public Task RunDownload()
         {
-           // var description = await _youtubeClient.Videos.GetAsync(_videoUrl);
-            //await _youtubeClient.Videos.DownloadAsync(_videoUrl, _outputFilePath);
-           //string filename = DateTime.Now.ToShortDateString() + "_" + description.Title.Split(' ')[0] + ".mp4";
-            //string fname = Path.Combine("D", "you",  description.Title.Split(' ')[0] + ".mp4");
             await _youtubeClient.Videos.DownloadAsync(_videoUrl, _outputFilePath, builder => builder.SetPreset(ConversionPreset.UltraFast));
-            
             Console.WriteLine("  Выбранное видео полностью загруженно !\n Поздравляем!!!");
         }
     }
