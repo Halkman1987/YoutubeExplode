@@ -17,6 +17,8 @@ namespace YoutubeExplode
             string videoUrl = Console.ReadLine();
             Console.WriteLine("Введите имя видеоролика :");
             string VidName = Console.ReadLine();
+            // корневую папку для сохранения  в идеале бы вводить с консоли и проверять её наличие на диске и
+            //  вслучае отсутствия предлагать создать. Но у меня она будет фиксированной 
             string rootdir = @"D:\you";
             string outputFilePath = Path.Combine(rootdir, VidName +".mp4");
 
