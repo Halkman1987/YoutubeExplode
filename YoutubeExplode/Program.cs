@@ -13,11 +13,13 @@ namespace YoutubeExplode
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Вставьте адресс");
+            Console.WriteLine("Вставьте url-адресс видеоролика в формате :\n https://www.youtube.com/.......");
             string videoUrl = Console.ReadLine();
-            // = "https://www.youtube.com/watch?v=AsNtJQK3Q90";
-            string outputFilePath = @"D:\you";
-            
+            Console.WriteLine("Введите имя видеоролика :");
+            string VidName = Console.ReadLine();
+            string rootdir = @"D:\you";
+            string outputFilePath = Path.Combine(rootdir, VidName +".mp4");
+
             PultButton pultButton = new PultButton();
             
             YoutubeClient youtubeClient = new YoutubeClient();
@@ -28,9 +30,11 @@ namespace YoutubeExplode
             pultButton.InfoVideo();
             Console.WriteLine("Нажмем для скачивания");
             Console.ReadKey();
-            
+            Console.WriteLine("Начинается загрузка видеофайла");
             pultButton.DownLoadVideo();
+            
             Console.ReadKey();
+            Console.WriteLine($"Ваш видеоролик находится в {outputFilePath}");
         }
     }
 }
